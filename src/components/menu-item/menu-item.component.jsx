@@ -12,6 +12,7 @@ import {
 const MenuItem = ({ title, imageUrl, size, history, match, linkUrl }) => (
     <MenuItemContainer
         size={size}
+		// if the event click is trigger on menu item, the website will go to the page corresponding to the url
         onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
         <BackgroundImageContainer
