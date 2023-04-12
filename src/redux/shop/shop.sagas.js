@@ -1,31 +1,31 @@
 import { takeLatest, all, call, put } from 'redux-saga/effects'
-import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils'
-import { 
+import { firestore, convertCategorySnapshotToMap } from '../../firebase/firebase.utils'
+import {
     fetchCollectionsSuccess,
-    fetchCollectionsFailure 
+    fetchCollectionsFailure
 } from './shop.actions'
 import ShopActionTypes from './shop.types'
 
-export function* fetchCollectionsAsync () {
+export function* fetchItemCategoriesAsync() {
     try {
-        const collectionRef = firestore.collection('collections');
-        const snapshot = yield collectionRef.get();
-        const collectionsMap = yield call(convertCollectionsSnapshotToMap, snapshot)
-        yield put(fetchCollectionsSuccess(collectionsMap))
+        const itemCategoriesReference = firestore.collection('itemCategories');
+        const itemCategoriesSnapshot = yield itemCategoriesReference.get();
+        const itemCategoriesMap = yield call(convertCategorySnapshotToMap, itemCategoriesSnapshot)
+        yield put(fetchCollectionsSuccess(itemCategoriesMap))
     } catch (error) {
         yield put(fetchCollectionsFailure(error.massage))
     }
 }
 
-export function* fetchCollectionsStart () {
+export function* fetchItemCategoriesStart() {
     yield takeLatest(
-        ShopActionTypes.FETCH_COLLECTION_START, 
-        fetchCollectionsAsync
+        ShopActionTypes.FETCH_COLLECTION_START,
+        fetchItemCategoriesAsync
     );
 }
 
-export function* shopSagas () {
-    yield all([call(fetchCollectionsStart)])
+export function* shopSagas() {
+    yield all([call(fetchItemCategoriesStart)])
 }
 
 

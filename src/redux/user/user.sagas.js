@@ -5,7 +5,7 @@ import UserActionTypes from "./user.types";
 import {
     auth,
     googleProvider,
-    createUserProfileDocument,
+    getUserProfileDocument,
     getCurrentUser
 } from "../../firebase/firebase.utils";
 
@@ -21,7 +21,7 @@ import {
 export function* getSnapShotFromUserAuth(userAuth, additionalData) {
     try {
         const userRef = yield call(
-            createUserProfileDocument,
+            getUserProfileDocument,
             userAuth,
             additionalData
         );
@@ -37,7 +37,7 @@ export function* getSnapShotFromUserAuth(userAuth, additionalData) {
 export function* signInWithGoogle() {
     try {
         const { user } = yield auth.signInWithPopup(googleProvider);
-        yield getSnapShotFromUserAuth(user);
+        yield getSnapShotFromUserAuth(user, user.displayName);
     } catch (error) {
         yield put(signInFailure(error));
     }
@@ -79,6 +79,7 @@ export function* signUp({ payload: { email, password, displayName } }) {
         );
         yield put(signUpSuccess({ user, additionalData: { displayName } }));
     } catch (error) {
+        alert("<ERROR>: A user with this email already exists. Please try again.");
         yield put(signUpFailure(error));
     }
 }
