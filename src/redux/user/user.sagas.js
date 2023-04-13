@@ -48,6 +48,7 @@ export function* signInWithEmail({ payload: { email, password } }) {
         const { user } = yield auth.signInWithEmailAndPassword(email, password);
         yield getSnapShotFromUserAuth(user);
     } catch (error) {
+        alert("<ERROR>: A user with this email and password does not exist. Please try again.\n");
         yield put(signInFailure(error));
     }
 }
@@ -79,7 +80,7 @@ export function* signUp({ payload: { email, password, displayName } }) {
         );
         yield put(signUpSuccess({ user, additionalData: { displayName } }));
     } catch (error) {
-        alert("<ERROR>: A user with this email already exists. Please try again.");
+        alert("<ERROR>: A user with this email already exists. Please try again.\n");
         yield put(signUpFailure(error));
     }
 }
