@@ -2,28 +2,35 @@ const INITIAL_STATE = {
   sections: [
     {
       title: 'mugs',
-      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Please%20Mute%20Your%20Mic%20Mug.png?alt=media&token=a839ce28-194a-4567-a97d-4f5b2dfa0d7d',
+      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Mugs%20Category%20Image.jpg?alt=media&token=f7517a86-e3f5-4185-9f7e-ed02f2c90c12',
       id: 1,
       linkUrl: 'shop/mugs'
     },
     {
       title: 'food',
-      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/White%20Candy.png?alt=media&token=05916751-db41-4ac0-be7a-fe5eaba7a39b',
+      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Food%20Category%20Image.png?alt=media&token=86ac333a-8961-456f-b40f-b040e29dcc03',
       id: 2,
       linkUrl: 'shop/food'
     },
     {
       title: 'birthdays',
-      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Cigarette%20Birthday%20Candle.png?alt=media&token=5697f46c-c6c4-460c-bce9-f96b97d8a9d5',
+      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Birthdays%20Category%20Image.jpg?alt=media&token=ad6875cc-8b2d-4103-b205-98406e271fe0',
       id: 3,
       linkUrl: 'shop/birthdays'
     },
     {
       title: 'electronics',
-      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Giant%20Enter%20Button.jpg?alt=media&token=9aefb7da-64e9-4ed7-965d-16ed6da66472',
+      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Electronics%20Category%20Image.jpg?alt=media&token=71f664a0-414c-439c-97a9-1a6cb7209f7f',
       size: 'large',
       id: 4,
       linkUrl: 'shop/electronics'
+    },
+    {
+      title: 'clothing',
+      imageUrl: 'https://firebasestorage.googleapis.com/v0/b/gag-gifts.appspot.com/o/Clothing%20Category%20Image.png?alt=media&token=64363ccd-9b51-40d5-abc0-e5068d523b62',
+      size: 'large',
+      id: 5,
+      linkUrl: 'shop/clothing'
     }
   ]
 }
