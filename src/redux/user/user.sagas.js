@@ -81,7 +81,7 @@ export function* signUp({ payload: { email, password, displayName } }) {
         );
         yield put(signUpSuccess({ user, additionalData: { displayName } }));
     } catch (error) {
-        alert("<ERROR>: A user with this email already exists. Please try again.");
+        alert("<ERROR>: A user with this email already exists. Please try again.\n");
         yield put(signUpFailure(error));
     }
 }
