@@ -76,10 +76,6 @@ export const getUserProfileDocument = async (userAuth, displayNameRef) => {
         return;
     }
 
-    // Retrieve the display name
-    const displayName = displayNameRef.displayName;
-    console.log(displayName);
-
     // Create a reference to the user's document in Firestore
     const userRef = firestore.doc(`userIdToUserInfo/${userAuth.uid}`);
 
@@ -88,6 +84,9 @@ export const getUserProfileDocument = async (userAuth, displayNameRef) => {
 
     // If the user does not exist in Firestore, create a new user document
     if (!snapShot.exists) {
+        // Retrieve the display name
+        const displayName = displayNameRef.displayName;
+
         // Retrieve the user's display name and email
         const { email } = userAuth;
         // Create a new date object for the user's creation date

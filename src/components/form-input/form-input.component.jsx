@@ -10,6 +10,7 @@ const FormInput = ({handleChange, label, ...props}) => (
     <GroupContainer className='group'>
         <FormInputContainer onChange={handleChange} {...props}/>
         {
+			// if the pointer is placed on the input form, the place holder will be shrink
             label 
             ? (
             <FromInputLabel className={props.value.length ? 'shrink' : ''}>

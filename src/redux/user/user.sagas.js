@@ -48,7 +48,7 @@ export function* signInWithEmail({ payload: { email, password } }) {
         const { user } = yield auth.signInWithEmailAndPassword(email, password);
         yield getSnapShotFromUserAuth(user);
     } catch (error) {
-        alert("<ERROR>: A user with this email and password does not exist. Please try again.\n");
+        alert("<ERROR>: Incorrect email or password. Please try again.");
         yield put(signInFailure(error));
     }
 }
@@ -59,6 +59,7 @@ export function* isUserAuthenticated() {
         if (!userAuth) return;
         yield getSnapShotFromUserAuth(userAuth);
     } catch (error) {
+        console.log(error);
         yield put(signInFailure(error));
     }
 }
