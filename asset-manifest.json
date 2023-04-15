@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "//gaggifts.github.io/static/css/main.7385ecad.chunk.css",
-    "main.js": "//gaggifts.github.io/static/js/main.cbbaa456.chunk.js",
-    "main.js.map": "//gaggifts.github.io/static/js/main.cbbaa456.chunk.js.map",
+    "main.css": "//gaggifts.github.io/static/css/main.2581971d.chunk.css",
+    "main.js": "//gaggifts.github.io/static/js/main.a01dd361.chunk.js",
+    "main.js.map": "//gaggifts.github.io/static/js/main.a01dd361.chunk.js.map",
     "runtime~main.js": "//gaggifts.github.io/static/js/runtime~main.31c4b8c8.js",
     "runtime~main.js.map": "//gaggifts.github.io/static/js/runtime~main.31c4b8c8.js.map",
-    "static/js/2.c71ac5e6.chunk.js": "//gaggifts.github.io/static/js/2.c71ac5e6.chunk.js",
-    "static/js/2.c71ac5e6.chunk.js.map": "//gaggifts.github.io/static/js/2.c71ac5e6.chunk.js.map",
+    "static/js/2.7fa274f7.chunk.js": "//gaggifts.github.io/static/js/2.7fa274f7.chunk.js",
+    "static/js/2.7fa274f7.chunk.js.map": "//gaggifts.github.io/static/js/2.7fa274f7.chunk.js.map",
     "index.html": "//gaggifts.github.io/index.html",
-    "precache-manifest.63ce92f556dede34c47b4c2446c9ac1e.js": "//gaggifts.github.io/precache-manifest.63ce92f556dede34c47b4c2446c9ac1e.js",
+    "precache-manifest.42eed12644068dbfb5ce84bede380e70.js": "//gaggifts.github.io/precache-manifest.42eed12644068dbfb5ce84bede380e70.js",
     "service-worker.js": "//gaggifts.github.io/service-worker.js",
-    "static/css/main.7385ecad.chunk.css.map": "//gaggifts.github.io/static/css/main.7385ecad.chunk.css.map",
-    "static/media/GagGiftsLogo.d1aee9cc.svg": "//gaggifts.github.io/static/media/GagGiftsLogo.d1aee9cc.svg",
+    "static/css/main.2581971d.chunk.css.map": "//gaggifts.github.io/static/css/main.2581971d.chunk.css.map",
+    "static/media/GagGiftsLogo.47e9e738.svg": "//gaggifts.github.io/static/media/GagGiftsLogo.47e9e738.svg",
     "static/media/logo.png": "//gaggifts.github.io/static/media/logo.187a59fc.png"
   }
 }
