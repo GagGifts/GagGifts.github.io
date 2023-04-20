@@ -3,6 +3,35 @@ import styled, { css } from 'styled-components'
 const subColor = 'grey';
 const mainColor = 'black';
 
+const getFormStyle = props => {
+    if (props.coupon) {
+		return css `
+			width: 60%;
+			margin-left: auto;
+			padding: 20px 0px;
+		`;
+    }
+
+	return css`
+		width: 100%
+	`
+}
+
+const getLable = props => {
+	if (props.coupon) {
+		return css `
+			right: 120px;
+			top: 30px;
+		`;
+	} else {
+		return css `
+			left: 5px;
+			top: 10px;
+		`
+	}
+}
+
+
 const shrinkLabel = css`
     top: -14px;
     font-size: 12px;
@@ -11,7 +40,10 @@ const shrinkLabel = css`
 
 export const GroupContainer = styled.div`
     position: relative;
-    margin: 45px 0;
+    margin: 30px 0;
+	display: flex;
+	justify-content: flex-end;
+	
 `
 
 export const FormInputContainer = styled.input`
@@ -20,11 +52,11 @@ export const FormInputContainer = styled.input`
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 100%;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid ${subColor};
     margin: 25px 0;
+	${getFormStyle}
 
     &:focus {
       outline: none;
@@ -41,10 +73,9 @@ export const FromInputLabel = styled.label`
     font-weight: normal;
     position: absolute;
     pointer-events: none;
-    left: 5px;
-    top: 10px;
+	${getLable}
     transition: 300ms ease all;
-
+	margin-left: auto
     &.shrink {
       ${shrinkLabel};
     }

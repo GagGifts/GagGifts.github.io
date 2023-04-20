@@ -9,6 +9,7 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shoppage.component"
+import CheckOut from "./pages/checkout/check-out.component.jsx"
 
 import SignInAndSignUp from "./pages/sign-up-and-sign-in/sign-up-and-sign-in.component";
 import Header from "./components/header/header.component";
@@ -34,6 +35,7 @@ const App = ({ checkUserSession, currentUser }) => {
             <Switch>
                 <Route exact path="/" component={HomePage} />
 		        <Route path="/shop" component={ShopPage} />
+		        <Route path="/checkout" component={CheckOut} />
                 <Route
                     exact
                     path="/signin"
