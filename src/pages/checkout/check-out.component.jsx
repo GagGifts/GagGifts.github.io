@@ -24,9 +24,9 @@ const CheckOut = () => {
 	const discount = useSelector(selectDiscount)
 	let totalToCheckout = 0
 	if (discount != 0) {
-		totalToCheckout = total - (total * discount / 100)
+		totalToCheckout = (total - (total * discount / 100)).toFixed(2);
 	} else {
-		totalToCheckout = total
+		totalToCheckout = total.toFixed(2);
 	}
 	return (
 		<CheckOutContainer>

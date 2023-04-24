@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import mainStyle from '../../styles/main.js'
+
+const {
+	device: { mobile },
+} = mainStyle;
 
 export const MenuItemContainer = styled.div`
 	height: ${({ size }) => (size ? '380px' : '240px')}
@@ -30,6 +35,10 @@ export const MenuItemContainer = styled.div`
     &:last-child {
     margin-left: 7.5px;
     }
+
+	@media ${mobile} {
+		width: 90vw;
+	}
 `;
 
 export const BackgroundImageContainer = styled.div`

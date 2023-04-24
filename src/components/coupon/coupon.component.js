@@ -7,7 +7,7 @@ import { selectDiscount } from '../../redux/coupon/coupon.selectors'
 
 import FormInput from '../form-input/form-input.component';
 
-import { CouponButtonContainer, CouponContainer } from './coupon.styles';
+import { CouponButtonContainer, CouponContainer, TextContainer } from './coupon.styles';
 
 const defaultFields = {
   coupon: '',
@@ -22,6 +22,7 @@ const Coupon = () => {
 		const {name, value} = event.target;
 		setFormFields({...formFields, [name]: value});
 	};
+
 
 	return (
 		<CouponContainer>

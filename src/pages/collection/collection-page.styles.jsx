@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+import mainStyle from '../../styles/main'
+
+const { device: {mobile}  } = mainStyle
+
 export const CollectionPageContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -18,4 +22,9 @@ export const CollectionItemContainer = styled.div`
     & > div {
       margin-bottom: 30px;
     }
+
+	@media ${mobile} {
+		grid-template-columns: 1fr;
+		grid-gap: 30px;
+	}
 `

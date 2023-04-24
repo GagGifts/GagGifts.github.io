@@ -20,6 +20,16 @@ export const CouponContainer = styled.div`
 	margin-left: auto;
 `
 
+export const TextContainer = styled.div`
+	display: flex;
+	justify-content: flex-end;
+	font-size: 30px;
+	color: red;
+    width: 100%;
+	margin-left: auto;
+	margin-bottom: 2rem;
+`
+
 export const CouponButtonContainer = styled.div`
     min-width: 165px;
     width: 50%;

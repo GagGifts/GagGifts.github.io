@@ -6,6 +6,7 @@ import { selectIsToggle } from "../../redux/navigation-button/navigation-button.
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import { signOutStart } from '../../redux/user/user.actions'
+import { mobileAndTabletcheck  } from '../../assets/utils/utils.js'
 
 import { ReactComponent as Logo } from './GagGiftsLogo.svg'
 import NavigationButton from '../navitation-button/navigation-button.component';
@@ -24,15 +25,21 @@ const Header = () => {
     const currentUser = useSelector(selectCurrentUser);
 	const hidden = useSelector(selectCartHidden);
     const dispatch = useDispatch();
+	const mobile = mobileAndTabletcheck();
     return (
         <HeaderContainer>
             <NavigationButton />
             <LinkContainer to='/' isToggle={isToggle}>
                 <Logo />
             </LinkContainer>
-            <BrandContainer>
-                Welcome to GagGift.com!
-            </BrandContainer>
+			{
+				!mobile ? (
+					<BrandContainer>
+						Welcome to GagGift.com!
+					</BrandContainer>
+				) : null
+			}
+
             <OptionsContainer>
 				<OptionLink to="/shop">SHOP</OptionLink>
 				<OptionLink to="/contact">CONTACT</OptionLink>

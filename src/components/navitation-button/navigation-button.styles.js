@@ -13,12 +13,32 @@ const getIsOnHome = ({isToggle}) => {
 			top: 2rem;
 			left: 14rem;
 			z-index: 2000;
+
+			@media ${mobile} {
+				position: fixed;
+				top: unset;
+				left: unset;
+				bottom: 4rem;
+				right: 2rem;
+				z-index: 2000;
+
+			}
 	`
 	: css`
 			position: fixed;
 			top: 2rem;
 			left: 2rem;
 			z-index: 2000;
+
+			@media ${mobile} {
+				position: fixed;
+				top: unset;
+				left: unset;
+				bottom: 4rem;
+				right: 2rem;
+				z-index: 2000;
+
+			}
 	`;
 
 }
@@ -48,22 +68,20 @@ export const NavigationControl = styled.label.attrs({
     width: 4rem;
     background: transparent;
 	
-	${getIsOnHome}
     text-align: center;
     cursor: pointer;
     backface-visibility: hidden;
 
-    @media ${mobile}, ${mobileLanscape}, ${mobileS} {
-        height: 10rem;
-        width: 10rem;
-        bottom: 8rem;
-        right: 4rem;
-    }
+	@media ${mobile} {
+		border-radius: 50%;
+		background-color: #2a1353;
+		position: fixed;
+		bottom: 4rem;
+		right: 2rem;
+		z-index: 2000;
+	}
 
-    @media ${mobileSLanscape} {
-        height: 10rem;
-        width: 10rem;
-    }
+	${getIsOnHome}
 `;
 
 export const NavigationLogo = styled.div`
@@ -96,16 +114,15 @@ export const NavigationLogo = styled.div`
         top: 0.7rem;
     }
 
-	${getIcon}
 
     @media ${mobileSLanscape} {
-        margin-top: 2.5rem;
+        margin-top: 3.5rem;
         position: relative;
 
         &,
         &::after,
         &::before {
-            width: 2rem;
+            width: 3rem;
             height: 2px;
             background-color: #e9d2db;
             display: inline-block;
@@ -129,13 +146,12 @@ export const NavigationLogo = styled.div`
     }
 
     @media ${mobile}, ${mobileLanscape} {
-        margin-top: 5rem;
         position: relative;
 
         &,
         &::after,
         &::before {
-            width: 4.5rem;
+            width: 2rem;
             background-color: #e9d2db;
         }
 
@@ -148,13 +164,15 @@ export const NavigationLogo = styled.div`
         }
 
         &::before {
-            top: -1.2rem;
+            // top: -1rem;
         }
 
         &::after {
-            top: 1.3rem;
+            // top: 1rem;
         }
     }
+
+	${getIcon}
 `;
 
 export const NavigationContainer = styled.input.attrs({
