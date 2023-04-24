@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { checkCoupon } from '../../redux/coupon/coupon.actions'
 
-import { selectDiscount } from '../../redux/coupon/coupon.selectors'
+import { selectDiscount, selectNameCoupon } from '../../redux/coupon/coupon.selectors'
 
 import FormInput from '../form-input/form-input.component';
 
@@ -15,6 +15,7 @@ const defaultFields = {
 
 const Coupon = () => {
 	const dispatch = useDispatch();
+	const nameCoupon = useSelector(selectNameCoupon)
 	const discount = useSelector(selectDiscount)
 	const [formFields, setFormFields] = useState(defaultFields);
 	const { coupon  } = formFields
@@ -36,6 +37,9 @@ const Coupon = () => {
 					required
 					coupon
 				/>
+		{
+			discount != 0 ? <TextContainer>{nameCoupon} Applied </TextContainer> : <TextContainer>Please Enter valid coupon</TextContainer>
+		}
 				<CouponButtonContainer onClick={() => dispatch(checkCoupon(coupon))} > APPLY </CouponButtonContainer>
 			</form>
 		</CouponContainer>

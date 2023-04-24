@@ -6,7 +6,8 @@ const INITIAL_STATE = {
 		"GROUP14" : 20,
 		"GAGGIFT" : 10 
 	},
-	discount: 0 
+	discount: 0,
+	nameCoupon: ""
 };
 
 const couponReducer = (state = INITIAL_STATE, action) => {
@@ -14,7 +15,8 @@ const couponReducer = (state = INITIAL_STATE, action) => {
 		case CouponActionTypes.CHECK_COUPON:
             return {
                 ...state,
-                discount: getDiscount(state.coupon, action.payload) 
+                discount: getDiscount(state.coupon, action.payload),
+				nameCoupon: action.payload
             };
         default:
             return state;
