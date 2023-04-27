@@ -26,5 +26,6 @@ export const CollectionItemContainer = styled.div`
 	@media ${mobile} {
 		grid-template-columns: 1fr;
 		grid-gap: 30px;
+		justify-items: center;
 	}
 `

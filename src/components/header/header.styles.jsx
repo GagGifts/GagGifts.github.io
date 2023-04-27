@@ -41,18 +41,12 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-bottom: 25px;
-	// border-bottom: 2px solid rgb(5, 68, 104);
 	position: absolute:
 	z-index: 2000;
 `
 
 export const LinkContainer = styled(Link)`
 	${getIsOnHome}
-    // height: 100%;
-    // width: 100%;
-    // padding: 25px;
-    // display: flex;
-    // justify-content: flex-end;
 `
 
 export const OptionsContainer = styled.div`
@@ -65,6 +59,9 @@ export const OptionsContainer = styled.div`
 
 export const OptionLink = styled(Link)`
     padding: 10px 15px;
+    white-space: nowrap;
+	text-decoration: none;
+	color: black;
 `
 
 export const BrandContainer = styled.div`

@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import Coupon from '../../components/coupon/coupon.component'
+import mainStyle from '../../styles/main'
+
+const { device: {mobile}  } = mainStyle
 
 export const CheckOutContainer = styled.div`
     width: 55%;
@@ -8,10 +11,13 @@ export const CheckOutContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
-        button {
-            margin-left: auto;
-            margin-top: 50px;
-        }
+	button {
+		margin-left: auto;
+		margin-top: 50px;
+	}
+	@media ${mobile} {
+		width: 90vw;
+	}
 `
 
 export const CheckOutHeader = styled.div`

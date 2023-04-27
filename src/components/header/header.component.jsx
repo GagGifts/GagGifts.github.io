@@ -26,6 +26,7 @@ const Header = () => {
 	const hidden = useSelector(selectCartHidden);
     const dispatch = useDispatch();
 	const mobile = mobileAndTabletcheck();
+	const signIn = "SIGN IN";
     return (
         <HeaderContainer>
             <NavigationButton />
@@ -41,7 +42,9 @@ const Header = () => {
 			}
 
             <OptionsContainer>
-				<OptionLink to="/shop">SHOP</OptionLink>
+			{
+				!mobile ? (<OptionLink to="/shop">SHOP</OptionLink>) : null
+			}
 				<OptionLink to="/contact">CONTACT</OptionLink>
                 {currentUser ? (
                     /* if the user logged in, display "SIGN OUT", otherwise "SIGN IN" */
@@ -49,7 +52,7 @@ const Header = () => {
                         SIGN OUT
                     </OptionLink>
                 ) : (
-                    <OptionLink to='/signin'>SIGN IN</OptionLink>
+                    <OptionLink to='/signin'>{signIn}</OptionLink>
                 )}
 					<CardIcon/>
             </OptionsContainer>

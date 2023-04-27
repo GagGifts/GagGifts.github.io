@@ -15,8 +15,8 @@ import SignInAndSignUp from "./pages/sign-up-and-sign-in/sign-up-and-sign-in.com
 import Header from "./components/header/header.component";
 import NavigationButton from "./components/navitation-button/navigation-button.component";
 import NavigationSideBar from "./components/navigation-sidebar/navigation-sidebar.component"
-import { NavigationSideBarContainer } from "./App.styles" 
-import "./App.css"
+import { NavigationSideBarContainer, AppContainer } from "./App.styles" 
+// import "./App.css"
 
 
 const App = ({ checkUserSession, currentUser }) => {
@@ -26,7 +26,7 @@ const App = ({ checkUserSession, currentUser }) => {
 
 	const isToggle = useSelector(selectIsToggle);
     return (
-        <div className="App">
+        <AppContainer>
             <Header />
 			<NavigationButton/>
 			<NavigationSideBarContainer isToggle={isToggle}>
@@ -44,7 +44,7 @@ const App = ({ checkUserSession, currentUser }) => {
                     }
                 />
             </Switch>
-        </div>
+        </AppContainer>
     );
 };
 

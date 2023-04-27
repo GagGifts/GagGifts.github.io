@@ -5,7 +5,7 @@ import mainStyle from '../../styles/main'
 
 
 const {
-	device: { mobile, mobileLanscape },
+	device: { mobile },
 } = mainStyle;
 
 export const HomePageContainer = styled.div`
@@ -16,19 +16,17 @@ export const HomePageContainer = styled.div`
 `;
 
 export const BackgroundContainer = styled.div`
-    height: 30vh;
-	width: 15vw;
+	width: 100%;
+	height: 30vh;
 	background-image: url(${LOGO});
-    background-size: cover;
-    background-position: center;
-	@media ${mobileLanscape} {
-		height: 25vh;
-		width: 20vw;
-	}
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 
 	@media ${mobile} {
 		height: 25vh;
 		width: 40vw;
 	}
+
 `;
 
