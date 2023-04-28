@@ -177,5 +177,14 @@ export const convertCategorySnapshotToMap = async (collections) => {
     return reducedObjects;
 };
 
+// Script to get a list of the current coupons in the system
+export const getCoupons = async () => {
+    const collectionRef = firestore.collection("coupons");
+    const snapShot = await collectionRef.get();
+    const coupons = snapShot.docs.map(doc => doc.data());
+    console.log(coupons);
+    return coupons;
+};
+
 // Exporting firebase
 export default firebase;
