@@ -179,19 +179,14 @@ export const convertCategorySnapshotToMap = async (collections) => {
 
 // Script to get a list of the current coupons in the system
 export const getCoupons = coupons => {
-    // const collectionRef = firestore.collection("coupons");
-    // const snapShot = await collectionRef.get();
-    // const coupons = snapShot.docs.map(doc => doc.data());
-    // console.log(coupons);
-
-	const transformedCoupons = coupons.docs.map(doc => {
-        const { couponID, discount, expirationDate, isPercentDiscount} = doc.data();
+    const transformedCoupons = coupons.docs.map(doc => {
+        const { couponID, discount, expirationDate, isPercentDiscount } = doc.data();
 
         return {
-			couponID,
-			discount,
-			expirationDate,
-			isPercentDiscount
+            couponID,
+            discount,
+            expirationDate,
+            isPercentDiscount
         };
     });
 

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {selectCartItemsTotal} from '../../redux/cart/cart.selectors';
+import { selectCartItemsTotal } from '../../redux/cart/cart.selectors';
 
 import { checkCoupon } from '../../redux/coupon/coupon.actions'
 
@@ -11,7 +11,7 @@ import FormInput from '../form-input/form-input.component';
 import { CouponButtonContainer, CouponContainer, TextContainer } from './coupon.styles';
 
 const defaultFields = {
-  coupon: '',
+	coupon: '',
 };
 
 const Coupon = () => {
@@ -20,18 +20,18 @@ const Coupon = () => {
 	const discount = useSelector(selectDiscount)
 	const total = useSelector(selectCartItemsTotal)
 	const [formFields, setFormFields] = useState(defaultFields);
-	const { coupon  } = formFields
+	const { coupon } = formFields
 	const handleChange = event => {
-		const {name, value} = event.target;
-		setFormFields({...formFields, [name]: value});
+		const { name, value } = event.target;
+		setFormFields({ ...formFields, [name]: value });
 	};
-	
+
 	let totalReduced = 0;
 	const now = new Date();
 
 	if (discount != null) {
-		if(discount.isPercentDiscount) {
-			totalReduced = (total * discount.discount).toFixed(2);	
+		if (discount.isPercentDiscount) {
+			totalReduced = (total * discount.discount).toFixed(2);
 		} else {
 			totalReduced = discount.discount.toFixed(2);
 		}
@@ -50,13 +50,13 @@ const Coupon = () => {
 					required
 					coupon
 				/>
-		{
-			discount != null 
-				? (discount.expirationDate.seconds < now.getTime() / 1000)
-					? (<TextContainer> Sorry. The coupon has expired </TextContainer>)
-					: <TextContainer>{nameCoupon} Applied, and Total is reduced by {totalReduced} </TextContainer> 
-				: <TextContainer>Please Enter valid coupon</TextContainer>
-		}
+				{
+					discount != null
+						? (discount.expirationDate.seconds < now.getTime() / 1000)
+							? (<TextContainer>Sorry, the Coupon You Entered has Expired.</TextContainer>)
+							: <TextContainer>{nameCoupon} was Successfully Applied. Your Total has Been Reduced by ${totalReduced}</TextContainer>
+						: <TextContainer>Please Enter a Valid Coupon</TextContainer>
+				}
 				<CouponButtonContainer onClick={() => dispatch(checkCoupon(coupon))} > APPLY </CouponButtonContainer>
 			</form>
 		</CouponContainer>
