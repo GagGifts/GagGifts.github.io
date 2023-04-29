@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux'
-import { createStructuredSelector } from 'reselect'
 
 import { selectCartItemsTotal, selectCartItems } from '../../redux/cart/cart.selectors'
 import {selectDiscount} from '../../redux/coupon/coupon.selectors'
 
+import { fetchCouponsStart } from '../../redux/coupon/coupon.actions'
+
 import CheckOutItem from '../../components/checkout-item/checkout-item.component'
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component'
-import Coupon from '../../components/coupon/coupon.component'
 
 import {
 	CheckOutContainer,
@@ -19,12 +19,21 @@ import {
 } from './check-out.styles'
 
 const CheckOut = () => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(fetchCouponsStart());
+	}, [fetchCouponsStart]);
 	const total = useSelector(selectCartItemsTotal)
 	const cartItems = useSelector(selectCartItems)
-	const discount = useSelector(selectDiscount)
+	const coupon = useSelector(selectDiscount)
 	let totalToCheckout = 0
-	if (discount != 0) {
-		totalToCheckout = (total - (total * discount / 100)).toFixed(2);
+	if (coupon != null) {
+		console.log(coupon);
+		if (coupon.isPercentDiscount) {
+			totalToCheckout = (total - (total * coupon.discount)).toFixed(2);
+		} else {
+			totalToCheckout = (total - coupon.discount).toFixed(2);
+		}
 	} else {
 		totalToCheckout = total.toFixed(2);
 	}

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {selectCartItemsTotal} from '../../redux/cart/cart.selectors';
 
 import { checkCoupon } from '../../redux/coupon/coupon.actions'
 
@@ -17,13 +18,23 @@ const Coupon = () => {
 	const dispatch = useDispatch();
 	const nameCoupon = useSelector(selectNameCoupon)
 	const discount = useSelector(selectDiscount)
+	const total = useSelector(selectCartItemsTotal)
 	const [formFields, setFormFields] = useState(defaultFields);
 	const { coupon  } = formFields
 	const handleChange = event => {
 		const {name, value} = event.target;
 		setFormFields({...formFields, [name]: value});
 	};
+	
+	let totalReduced = 0;
 
+	if (discount != null) {
+		if(discount.isPercentDiscount) {
+			totalReduced = (total * discount.discount).toFixed(2);	
+		} else {
+			totalReduced = discount.discount.toFixed(2);
+		}
+	}
 
 	return (
 		<CouponContainer>
@@ -38,7 +49,7 @@ const Coupon = () => {
 					coupon
 				/>
 		{
-			discount != 0 ? <TextContainer>{nameCoupon} Applied </TextContainer> : <TextContainer>Please Enter valid coupon</TextContainer>
+			discount != null ? <TextContainer>{nameCoupon} Applied, and Total is reduced by {totalReduced} </TextContainer> : <TextContainer>Please Enter valid coupon</TextContainer>
 		}
 				<CouponButtonContainer onClick={() => dispatch(checkCoupon(coupon))} > APPLY </CouponButtonContainer>
 			</form>
