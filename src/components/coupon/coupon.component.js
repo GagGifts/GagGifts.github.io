@@ -27,6 +27,7 @@ const Coupon = () => {
 	};
 	
 	let totalReduced = 0;
+	const now = new Date();
 
 	if (discount != null) {
 		if(discount.isPercentDiscount) {
@@ -35,6 +36,7 @@ const Coupon = () => {
 			totalReduced = discount.discount.toFixed(2);
 		}
 	}
+
 
 	return (
 		<CouponContainer>
@@ -49,7 +51,11 @@ const Coupon = () => {
 					coupon
 				/>
 		{
-			discount != null ? <TextContainer>{nameCoupon} Applied, and Total is reduced by {totalReduced} </TextContainer> : <TextContainer>Please Enter valid coupon</TextContainer>
+			discount != null 
+				? (discount.expirationDate.seconds < now.getTime() / 1000)
+					? (<TextContainer> Sorry. The coupon has expired </TextContainer>)
+					: <TextContainer>{nameCoupon} Applied, and Total is reduced by {totalReduced} </TextContainer> 
+				: <TextContainer>Please Enter valid coupon</TextContainer>
 		}
 				<CouponButtonContainer onClick={() => dispatch(checkCoupon(coupon))} > APPLY </CouponButtonContainer>
 			</form>

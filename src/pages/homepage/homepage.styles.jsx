@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import LOGO from './logo.png'
 
 import mainStyle from '../../styles/main'

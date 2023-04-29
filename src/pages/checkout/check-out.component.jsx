@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { connect, useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { selectCartItemsTotal, selectCartItems } from '../../redux/cart/cart.selectors'
 import {selectDiscount} from '../../redux/coupon/coupon.selectors'
@@ -22,14 +22,16 @@ const CheckOut = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchCouponsStart());
-	}, [fetchCouponsStart]);
+	});
 	const total = useSelector(selectCartItemsTotal)
 	const cartItems = useSelector(selectCartItems)
 	const coupon = useSelector(selectDiscount)
+	const now = new Date();
 	let totalToCheckout = 0
 	if (coupon != null) {
-		console.log(coupon);
-		if (coupon.isPercentDiscount) {
+		if (coupon.expirationDate.seconds < now.getTime() / 1000) {
+			totalToCheckout = total.toFixed(2);
+		} else if (coupon.isPercentDiscount) {
 			totalToCheckout = (total - (total * coupon.discount)).toFixed(2);
 		} else {
 			totalToCheckout = (total - coupon.discount).toFixed(2);

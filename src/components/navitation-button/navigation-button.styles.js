@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 import mainStyle from '../../styles/main';
 
 const {
-	device: {mobile, mobileS, mobileSLanscape, mobileLanscape},
+	device: {mobile, mobileSLanscape, mobileLanscape},
 } = mainStyle;
 
 
