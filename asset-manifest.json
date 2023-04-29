@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.098b255f.chunk.css",
-    "main.js": "/static/js/main.1bb31ccb.chunk.js",
-    "main.js.map": "/static/js/main.1bb31ccb.chunk.js.map",
+    "main.js": "/static/js/main.61a84bff.chunk.js",
+    "main.js.map": "/static/js/main.61a84bff.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/js/2.bbf1d75e.chunk.js": "/static/js/2.bbf1d75e.chunk.js",
     "static/js/2.bbf1d75e.chunk.js.map": "/static/js/2.bbf1d75e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.76e4c6b4ed51553de202406a756670c0.js": "/precache-manifest.76e4c6b4ed51553de202406a756670c0.js",
+    "precache-manifest.0490057b1f4a9629e17677cf0f678eea.js": "/precache-manifest.0490057b1f4a9629e17677cf0f678eea.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.098b255f.chunk.css.map": "/static/css/main.098b255f.chunk.css.map",
-    "static/media/GagGiftsLogo.47e9e738.svg": "/static/media/GagGiftsLogo.47e9e738.svg",
+    "static/media/GagGiftsLogo.d1aee9cc.svg": "/static/media/GagGiftsLogo.d1aee9cc.svg",
     "static/media/logo.png": "/static/media/logo.187a59fc.png",
-    "static/media/shopping-bag.09e6f5e7.svg": "/static/media/shopping-bag.09e6f5e7.svg"
+    "static/media/shopping-bag.30f07071.svg": "/static/media/shopping-bag.30f07071.svg"
   }
 }
