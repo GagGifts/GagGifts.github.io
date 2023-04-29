@@ -1,5 +1,12 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import LOGO from './logo.png'
+
+import mainStyle from '../../styles/main'
+
+
+const {
+	device: { mobile },
+} = mainStyle;
 
 export const HomePageContainer = styled.div`
 	display: flex;
@@ -9,10 +16,17 @@ export const HomePageContainer = styled.div`
 `;
 
 export const BackgroundContainer = styled.div`
-    height: 30vh;
-	width: 15vw;
+	width: 100%;
+	height: 30vh;
 	background-image: url(${LOGO});
-    background-size: cover;
-    background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	@media ${mobile} {
+		height: 25vh;
+		width: 40vw;
+	}
+
 `;
 

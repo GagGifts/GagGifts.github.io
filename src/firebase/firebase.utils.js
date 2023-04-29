@@ -177,5 +177,24 @@ export const convertCategorySnapshotToMap = async (collections) => {
     return reducedObjects;
 };
 
+// Script to get a list of the current coupons in the system
+export const getCoupons = coupons => {
+    const transformedCoupons = coupons.docs.map(doc => {
+        const { couponID, discount, expirationDate, isPercentDiscount } = doc.data();
+
+        return {
+            couponID,
+            discount,
+            expirationDate,
+            isPercentDiscount
+        };
+    });
+
+    return transformedCoupons.reduce((accumulator, coupon) => {
+        accumulator[coupon.couponID] = coupon;
+        return accumulator;
+    }, {});
+};
+
 // Exporting firebase
 export default firebase;

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import mainStyle from '../../styles/main'
 import CustomButton from '../custom-button/custom-button.component'
 
+const { device: {mobile}  } = mainStyle;
 export const CollectionItemContainer = styled.div`
     width: 22vw;
     display: flex;
@@ -19,6 +21,10 @@ export const CollectionItemContainer = styled.div`
         display: flex;
         }
     }
+
+	@media ${mobile} {
+		width: 80vw
+	}
 `
 
 export const ImageContainer = styled.div`
@@ -35,6 +41,9 @@ export const AddButton = styled(CustomButton)`
     position: absolute;
     top: 255px;
     display: none;
+	@media ${mobile} {
+		display: inline;
+	}
 `
 export const CollectionFooterContainer = styled.div`
     width: 100%;

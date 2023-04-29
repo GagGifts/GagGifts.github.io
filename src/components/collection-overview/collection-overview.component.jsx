@@ -11,7 +11,6 @@ import {
 } from './collection-overview.styles'
 
 const CollectionOverview = ({ collections }) => {
-	console.log(collections);
 	return (<CollectionOverviewContainer>
 		{
 			collections.map(({ id, ...otherCollectionProps}) => (

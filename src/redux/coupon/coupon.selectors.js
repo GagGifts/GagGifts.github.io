@@ -8,3 +8,9 @@ export const selectDiscount = createSelector(
     ({ discount }) => discount
 );
 
+export const selectNameCoupon = createSelector(
+    [selectCoupon],
+    ({ nameCoupon }) => nameCoupon 
+);
+
+
