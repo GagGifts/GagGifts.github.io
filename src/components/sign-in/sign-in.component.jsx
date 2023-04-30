@@ -22,7 +22,6 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     });
 
     const { email, password } = userCredentials;
-
     /**
      * The following is a breakdown of the regex used to determine
      * if a given email is valid per RFC-5322 specifications:

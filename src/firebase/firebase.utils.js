@@ -85,7 +85,7 @@ export const getUserProfileDocument = async (userAuth, displayNameRef) => {
     // If the user does not exist in Firestore, create a new user document
     if (!snapShot.exists) {
         // Retrieve the display name
-        const displayName = displayNameRef.displayName;
+        const displayName = displayNameRef;
 
         // Retrieve the user's display name and email
         const { email } = userAuth;

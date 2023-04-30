@@ -55,7 +55,7 @@ const Coupon = () => {
 						? (discount.expirationDate.seconds < now.getTime() / 1000)
 							? (<TextContainer>Sorry, the Coupon You Entered has Expired.</TextContainer>)
 							: <TextContainer>{nameCoupon} was Successfully Applied. Your Total has Been Reduced by ${totalReduced}</TextContainer>
-						: <TextContainer>Please Enter a Valid Coupon</TextContainer>
+						: <TextContainer></TextContainer>
 				}
 				<CouponButtonContainer onClick={() => dispatch(checkCoupon(coupon))} > APPLY </CouponButtonContainer>
 			</form>
