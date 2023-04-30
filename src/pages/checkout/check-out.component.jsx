@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { selectCartItemsTotal, selectCartItems } from '../../redux/cart/cart.selectors'
-import {selectDiscount} from '../../redux/coupon/coupon.selectors'
+import { selectDiscount } from '../../redux/coupon/coupon.selectors'
 
 import { fetchCouponsStart } from '../../redux/coupon/coupon.actions'
 
@@ -58,22 +58,22 @@ const CheckOut = () => {
 					<span>Remove</span>
 				</HeaderBlockContainer>
 			</CheckOutHeader>
-		{
-			cartItems.map(cartItem =>
-				<CheckOutItem
-				key={cartItem.id}
-				cartItem={cartItem}
-				/>
-			)
-		}
-		<CouponContainer/>
-		 <TotalContainer className='total'>Total ${totalToCheckout}</TotalContainer>
+			{
+				cartItems.map(cartItem =>
+					<CheckOutItem
+						key={cartItem.id}
+						cartItem={cartItem}
+					/>
+				)
+			}
+			<CouponContainer />
+			<TotalContainer className='total'>Total ${totalToCheckout}</TotalContainer>
 			<TextWarningContainer className='test-warning'>
 				*please use the following test credit cart for payments*
-				<br/>
-				4242-4242-4242-4242 - Exp: 20/01 - CVV:123
+				<br />
+				4242-4242-4242-4242 - Exp: 09/26 - CVC:127
 			</TextWarningContainer>
-			<StripeCheckoutButton price={totalToCheckout}/>
+			<StripeCheckoutButton price={totalToCheckout} />
 		</CheckOutContainer>
 	)
 }
